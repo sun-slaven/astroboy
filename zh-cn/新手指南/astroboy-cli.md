@@ -1,13 +1,17 @@
 
 ## astroboy-cli 工具介绍
 
-### 1. 安装
+### 1. astroboy-cli 工具是用来做什么的？
+
+
+
+### 2. 安装
 
 ```
 npm install -g astroboy-cli
 ```
 
-### 2. 命令介绍
+### 3. 命令介绍
 
 #### ast dev
 

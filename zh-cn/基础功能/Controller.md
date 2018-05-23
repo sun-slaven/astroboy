@@ -1,7 +1,7 @@
 
 ### Controller
 
-#### Controller 层代码推荐写法
+#### 1. Controller 层代码推荐写法
 
 * 第一步：接收请求参数
 * 第二步：请求参数校验
@@ -30,15 +30,15 @@ class ShopController extends BaseController {
 module.exports = ShopController;
 ```
 
-#### 一些约定
+#### 2. 一些约定
 
 * 文件名命名约定：文件名按照 Controller 类名命名，例如 Controller 类叫 IndexController，那么相应的文件名就叫 IndexController.js
 * 每个应用都应该有一个 BaseController，一般约定存放在 `controllers/base`目录，应用的 BaseController 继承上层框架的 BaseController，最上层的 Controller  继承框架 Astroboy 的 BaseClass
 * Controller 构造函数第一个参数必须是 ctx 对象
 
-#### Controller 层如何调用 Service 层提供的服务接口
+#### 3. Controller 层如何调用 Service 层提供的服务接口
 
-##### 1. 最常见的用法
+##### （1）最常见的用法
 
 手动引入 Service Class 文件，然后在方法执行的时候，先初始化 Service Class，然后调用 Service 提供的接口。
 
@@ -61,7 +61,7 @@ class ShopController extends BaseController {
 module.exports = ShopController;
 ```
 
-##### 2. callService(service, method, ...args)
+##### （2）callService(service, method, ...args)
 
 该方法一般适用于调用上层业务框架提供的服务
 
@@ -98,7 +98,7 @@ const data = await this.callService('iron-base/shop.ShopSettingsService', 'getSh
 ```
 
 
-##### 3. getServiceClass(packageName, serviceName)
+##### （3）getServiceClass(packageName, serviceName)
 
 获取一个 Service 类，该方法适用于业务需要手动初始化 Service 类实例的场景。
 
@@ -128,7 +128,7 @@ module.exports = ShopController;
 
 **注意：** 初始化一个 Service 的时候，第一个参数必须为 ctx
 
-##### 4. getService(packageName, serviceName)
+##### （4）getService(packageName, serviceName)
 
 获取一个 Service 类实例，该方法会帮你初始化好 Service 类实例，并返回该实例。
 

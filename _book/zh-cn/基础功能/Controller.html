@@ -400,7 +400,7 @@
                                 <section class="normal markdown-section">
                                 
                                 <h3 id="controller">Controller</h3>
-<h4 id="controller-&#x5C42;&#x4EE3;&#x7801;&#x63A8;&#x8350;&#x5199;&#x6CD5;">Controller &#x5C42;&#x4EE3;&#x7801;&#x63A8;&#x8350;&#x5199;&#x6CD5;</h4>
+<h4 id="1-controller-&#x5C42;&#x4EE3;&#x7801;&#x63A8;&#x8350;&#x5199;&#x6CD5;">1. Controller &#x5C42;&#x4EE3;&#x7801;&#x63A8;&#x8350;&#x5199;&#x6CD5;</h4>
 <ul>
 <li>&#x7B2C;&#x4E00;&#x6B65;&#xFF1A;&#x63A5;&#x6536;&#x8BF7;&#x6C42;&#x53C2;&#x6570;</li>
 <li>&#x7B2C;&#x4E8C;&#x6B65;&#xFF1A;&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x6821;&#x9A8C;</li>
@@ -426,14 +426,14 @@
 }
 <span class="hljs-built_in">module</span>.exports = ShopController;
 </code></pre>
-<h4 id="&#x4E00;&#x4E9B;&#x7EA6;&#x5B9A;">&#x4E00;&#x4E9B;&#x7EA6;&#x5B9A;</h4>
+<h4 id="2-&#x4E00;&#x4E9B;&#x7EA6;&#x5B9A;">2. &#x4E00;&#x4E9B;&#x7EA6;&#x5B9A;</h4>
 <ul>
 <li>&#x6587;&#x4EF6;&#x540D;&#x547D;&#x540D;&#x7EA6;&#x5B9A;&#xFF1A;&#x6587;&#x4EF6;&#x540D;&#x6309;&#x7167; Controller &#x7C7B;&#x540D;&#x547D;&#x540D;&#xFF0C;&#x4F8B;&#x5982; Controller &#x7C7B;&#x53EB; IndexController&#xFF0C;&#x90A3;&#x4E48;&#x76F8;&#x5E94;&#x7684;&#x6587;&#x4EF6;&#x540D;&#x5C31;&#x53EB; IndexController.js</li>
 <li>&#x6BCF;&#x4E2A;&#x5E94;&#x7528;&#x90FD;&#x5E94;&#x8BE5;&#x6709;&#x4E00;&#x4E2A; BaseController&#xFF0C;&#x4E00;&#x822C;&#x7EA6;&#x5B9A;&#x5B58;&#x653E;&#x5728; <code>controllers/base</code>&#x76EE;&#x5F55;&#xFF0C;&#x5E94;&#x7528;&#x7684; BaseController &#x7EE7;&#x627F;&#x4E0A;&#x5C42;&#x6846;&#x67B6;&#x7684; BaseController&#xFF0C;&#x6700;&#x4E0A;&#x5C42;&#x7684; Controller  &#x7EE7;&#x627F;&#x6846;&#x67B6; Astroboy &#x7684; BaseClass</li>
 <li>Controller &#x6784;&#x9020;&#x51FD;&#x6570;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x5FC5;&#x987B;&#x662F; ctx &#x5BF9;&#x8C61;</li>
 </ul>
-<h4 id="controller-&#x5C42;&#x5982;&#x4F55;&#x8C03;&#x7528;-service-&#x5C42;&#x63D0;&#x4F9B;&#x7684;&#x670D;&#x52A1;&#x63A5;&#x53E3;">Controller &#x5C42;&#x5982;&#x4F55;&#x8C03;&#x7528; Service &#x5C42;&#x63D0;&#x4F9B;&#x7684;&#x670D;&#x52A1;&#x63A5;&#x53E3;</h4>
-<h5 id="1-&#x6700;&#x5E38;&#x89C1;&#x7684;&#x7528;&#x6CD5;">1. &#x6700;&#x5E38;&#x89C1;&#x7684;&#x7528;&#x6CD5;</h5>
+<h4 id="3-controller-&#x5C42;&#x5982;&#x4F55;&#x8C03;&#x7528;-service-&#x5C42;&#x63D0;&#x4F9B;&#x7684;&#x670D;&#x52A1;&#x63A5;&#x53E3;">3. Controller &#x5C42;&#x5982;&#x4F55;&#x8C03;&#x7528; Service &#x5C42;&#x63D0;&#x4F9B;&#x7684;&#x670D;&#x52A1;&#x63A5;&#x53E3;</h4>
+<h5 id="&#xFF08;1&#xFF09;&#x6700;&#x5E38;&#x89C1;&#x7684;&#x7528;&#x6CD5;">&#xFF08;1&#xFF09;&#x6700;&#x5E38;&#x89C1;&#x7684;&#x7528;&#x6CD5;</h5>
 <p>&#x624B;&#x52A8;&#x5F15;&#x5165; Service Class &#x6587;&#x4EF6;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x65B9;&#x6CD5;&#x6267;&#x884C;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5148;&#x521D;&#x59CB;&#x5316; Service Class&#xFF0C;&#x7136;&#x540E;&#x8C03;&#x7528; Service &#x63D0;&#x4F9B;&#x7684;&#x63A5;&#x53E3;&#x3002;</p>
 <p>&#x4EE3;&#x7801;&#x793A;&#x4F8B;&#xFF1A;</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">const</span> BaseController = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;../base/BaseController&apos;</span>);
@@ -451,7 +451,7 @@
 }
 <span class="hljs-built_in">module</span>.exports = ShopController;
 </code></pre>
-<h5 id="2-callserviceservice-method-args">2. callService(service, method, ...args)</h5>
+<h5 id="&#xFF08;2&#xFF09;callserviceservice-method-args">&#xFF08;2&#xFF09;callService(service, method, ...args)</h5>
 <p>&#x8BE5;&#x65B9;&#x6CD5;&#x4E00;&#x822C;&#x9002;&#x7528;&#x4E8E;&#x8C03;&#x7528;&#x4E0A;&#x5C42;&#x4E1A;&#x52A1;&#x6846;&#x67B6;&#x63D0;&#x4F9B;&#x7684;&#x670D;&#x52A1;</p>
 <ul>
 <li>service&#xFF1A;&#x670D;&#x52A1;&#xFF0C;&#x89C4;&#x5219; <code>${&#x5305;&#x540D;}/${&#x670D;&#x52A1;&#x540D;}</code>&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;<code>iron-base/shop.ShopSettingsService</code></li>
@@ -480,7 +480,7 @@
   ]
 }
 </code></pre>
-<h5 id="3-getserviceclasspackagename-servicename">3. getServiceClass(packageName, serviceName)</h5>
+<h5 id="&#xFF08;3&#xFF09;getserviceclasspackagename-servicename">&#xFF08;3&#xFF09;getServiceClass(packageName, serviceName)</h5>
 <p>&#x83B7;&#x53D6;&#x4E00;&#x4E2A; Service &#x7C7B;&#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x9002;&#x7528;&#x4E8E;&#x4E1A;&#x52A1;&#x9700;&#x8981;&#x624B;&#x52A8;&#x521D;&#x59CB;&#x5316; Service &#x7C7B;&#x5B9E;&#x4F8B;&#x7684;&#x573A;&#x666F;&#x3002;</p>
 <p>&#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF1A;</p>
 <ul>
@@ -504,7 +504,7 @@
 <span class="hljs-built_in">module</span>.exports = ShopController;
 </code></pre>
 <p><strong>&#x6CE8;&#x610F;&#xFF1A;</strong> &#x521D;&#x59CB;&#x5316;&#x4E00;&#x4E2A; Service &#x7684;&#x65F6;&#x5019;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x5FC5;&#x987B;&#x4E3A; ctx</p>
-<h5 id="4-getservicepackagename-servicename">4. getService(packageName, serviceName)</h5>
+<h5 id="&#xFF08;4&#xFF09;getservicepackagename-servicename">&#xFF08;4&#xFF09;getService(packageName, serviceName)</h5>
 <p>&#x83B7;&#x53D6;&#x4E00;&#x4E2A; Service &#x7C7B;&#x5B9E;&#x4F8B;&#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x4F1A;&#x5E2E;&#x4F60;&#x521D;&#x59CB;&#x5316;&#x597D; Service &#x7C7B;&#x5B9E;&#x4F8B;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x8BE5;&#x5B9E;&#x4F8B;&#x3002;</p>
 <p>&#x4EE3;&#x7801;&#x793A;&#x4F8B;&#xFF1A;</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">const</span> BaseController = <span class="hljs-built_in">require</span>(<span class="hljs-string">&apos;../base/BaseController&apos;</span>);
@@ -565,7 +565,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Controller","level":"1.4.3","depth":2,"next":{"title":"Service","level":"1.4.4","depth":2,"path":"zh-cn/基础功能/Service.md","ref":"./zh-cn/基础功能/Service.md","articles":[]},"previous":{"title":"Router","level":"1.4.2","depth":2,"path":"zh-cn/基础功能/Router.md","ref":"./zh-cn/基础功能/Router.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"zh-cn/基础功能/Controller.md","mtime":"2018-05-23T02:04:26.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-05-22T23:58:34.792Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Controller","level":"1.4.3","depth":2,"next":{"title":"Service","level":"1.4.4","depth":2,"path":"zh-cn/基础功能/Service.md","ref":"./zh-cn/基础功能/Service.md","articles":[]},"previous":{"title":"Router","level":"1.4.2","depth":2,"path":"zh-cn/基础功能/Router.md","ref":"./zh-cn/基础功能/Router.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"zh-cn/基础功能/Controller.md","mtime":"2018-05-23T02:07:07.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-05-23T02:07:21.436Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

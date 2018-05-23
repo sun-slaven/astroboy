@@ -15,13 +15,13 @@
 
 * 三、基础功能
   * [目录结构](./zh-cn/基础功能/目录结构.md)
+  * [配置](./zh-cn/基础功能/配置.md)
   * [Router](./zh-cn/基础功能/Router.md)
   * [Controller](./zh-cn/基础功能/Controller.md)
   * [Service](./zh-cn/基础功能/Service.md)
-  * [内置对象](./zh-cn/基础功能/内置对象.md)
-  * [配置](./zh-cn/基础功能/配置.md)
   * [中间件](./zh-cn/基础功能/中间件.md)
   * [插件](./zh-cn/基础功能/插件.md)
+  * [内置对象](./zh-cn/基础功能/内置对象.md)
 
 * 四、进阶
   * [运行时配置输出](./zh-cn/进阶/运行时配置输出.md)

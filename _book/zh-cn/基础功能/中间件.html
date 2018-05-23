@@ -60,7 +60,7 @@
     <link rel="next" href="插件.html" />
     
     
-    <link rel="prev" href="配置.html" />
+    <link rel="prev" href="Service.html" />
     
 
     </head>
@@ -258,59 +258,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.2" data-path="Router.html">
-            
-                <a href="Router.html">
-            
-                    
-                    Router
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.3" data-path="Controller.html">
-            
-                <a href="Controller.html">
-            
-                    
-                    Controller
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.4" data-path="Service.html">
-            
-                <a href="Service.html">
-            
-                    
-                    Service
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.5" data-path="内置对象.html">
-            
-                <a href="内置对象.html">
-            
-                    
-                    内置对象
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4.6" data-path="配置.html">
+        <li class="chapter " data-level="1.4.2" data-path="配置.html">
             
                 <a href="配置.html">
             
@@ -323,7 +271,46 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.4.7" data-path="中间件.html">
+        <li class="chapter " data-level="1.4.3" data-path="Router.html">
+            
+                <a href="Router.html">
+            
+                    
+                    Router
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="Controller.html">
+            
+                <a href="Controller.html">
+            
+                    
+                    Controller
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="Service.html">
+            
+                <a href="Service.html">
+            
+                    
+                    Service
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.6" data-path="中间件.html">
             
                 <a href="中间件.html">
             
@@ -336,12 +323,25 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.8" data-path="插件.html">
+        <li class="chapter " data-level="1.4.7" data-path="插件.html">
             
                 <a href="插件.html">
             
                     
                     插件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="内置对象.html">
+            
+                <a href="内置对象.html">
+            
+                    
+                    内置对象
             
                 </a>
             
@@ -431,7 +431,21 @@
     
                                 <section class="normal markdown-section">
                                 
-                                
+                                <h3 id="&#x4E2D;&#x95F4;&#x4EF6;">&#x4E2D;&#x95F4;&#x4EF6;</h3>
+<p>Middleware &#x4E2D;&#x95F4;&#x4EF6;&#x662F;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x7684;&#x6982;&#x5FF5;&#xFF0C;Astroboy &#x4E2D;&#x95F4;&#x4EF6;&#x662F;&#x57FA;&#x4E8E; Koa &#x4E2D;&#x95F4;&#x4EF6;&#x6784;&#x5EFA;&#xFF0C;&#x6240;&#x4EE5;&#x5B8C;&#x5168;&#x517C;&#x5BB9; Koa &#x7684;&#x4E2D;&#x95F4;&#x4EF6;&#x3002;&#x4E0E;&#x666E;&#x901A;&#x4E2D;&#x95F4;&#x4EF6;&#x4E0D;&#x540C;&#x7684;&#x5730;&#x65B9;&#xFF0C;Astroboy &#x6846;&#x67B6;&#x7684;&#x4E2D;&#x95F4;&#x4EF6;&#x7EA6;&#x5B9A;&#x4E86;&#x5199;&#x6CD5;&#xFF0C;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code>module.exports = (options, app) =&gt; {
+  return async function(ctx, next) {
+    // do something
+    await next();
+  };
+};
+</code></pre><p>&#x4E2D;&#x95F4;&#x4EF6;&#x683C;&#x5F0F;&#x4E3A;&#x4E00;&#x4E2A;&#x9AD8;&#x9636;&#x51FD;&#x6570;&#xFF0C;&#x5916;&#x90E8;&#x7684;&#x51FD;&#x6570;&#x63A5;&#x6536;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#xFF1A;</p>
+<ul>
+<li>&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#xFF1A;options&#xFF0C;&#x4E2D;&#x95F4;&#x4EF6;&#x7684;&#x914D;&#x7F6E;&#x5BF9;&#x8C61;&#xFF0C;&#x4ECE;&#x76F8;&#x5E94;&#x7684;&#x4E2D;&#x95F4;&#x4EF6;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x53D6;&#x5F97;&#x3002;</li>
+<li>&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#xFF1A;app&#xFF0C;&#x7EE7;&#x627F; Koa Application &#x7C7B;&#x7684;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#x5BF9;&#x8C61;</li>
+</ul>
+<p>&#x6267;&#x884C;&#x540E;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A; async function&#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x63A5;&#x6536;&#x4E24;&#x4E2A;&#x53C2;&#x6570; ctx &#x548C; next&#x3002;</p>
+
                                 
                                 </section>
                             
@@ -458,7 +472,7 @@
 
             
                 
-                <a href="配置.html" class="navigation navigation-prev " aria-label="Previous page: 配置">
+                <a href="Service.html" class="navigation navigation-prev " aria-label="Previous page: Service">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -474,7 +488,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"中间件","level":"1.4.7","depth":2,"next":{"title":"插件","level":"1.4.8","depth":2,"path":"zh-cn/基础功能/插件.md","ref":"./zh-cn/基础功能/插件.md","articles":[]},"previous":{"title":"配置","level":"1.4.6","depth":2,"path":"zh-cn/基础功能/配置.md","ref":"./zh-cn/基础功能/配置.md","articles":[]},"dir":"neutral"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"zh-cn/基础功能/中间件.md","mtime":"2018-05-22T22:35:47.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-05-23T02:07:21.436Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"中间件","level":"1.4.6","depth":2,"next":{"title":"插件","level":"1.4.7","depth":2,"path":"zh-cn/基础功能/插件.md","ref":"./zh-cn/基础功能/插件.md","articles":[]},"previous":{"title":"Service","level":"1.4.5","depth":2,"path":"zh-cn/基础功能/Service.md","ref":"./zh-cn/基础功能/Service.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"zh-cn/基础功能/中间件.md","mtime":"2018-05-23T06:10:41.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-05-23T02:07:21.436Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

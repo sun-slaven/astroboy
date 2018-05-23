@@ -429,7 +429,49 @@
     
                                 <section class="normal markdown-section">
                                 
-                                
+                                <h3 id="&#x5185;&#x7F6E;&#x5BF9;&#x8C61;">&#x5185;&#x7F6E;&#x5BF9;&#x8C61;</h3>
+<p>Koa &#x6709;4&#x4E2A;&#x5185;&#x7F6E;&#x5BF9;&#x8C61;&#xFF0C;Astroboy &#x6846;&#x67B6;&#x63D0;&#x4F9B;&#x4E86;&#x6269;&#x5C55;&#x8FD9;4&#x4E2A;&#x5185;&#x7F6E;&#x5BF9;&#x8C61;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
+<pre><code>app/extends
+&#x2514;&#x2500;&#x2500; application.js
+&#x2514;&#x2500;&#x2500; context.js
+&#x2514;&#x2500;&#x2500; request.js
+&#x2514;&#x2500;&#x2500; response.js
+</code></pre><p>&#x4F8B;&#x5982;&#xFF0C;&#x6211;&#x4EEC;&#x6709;&#x4E00;&#x4E2A;&#x5224;&#x65AD;&#x5F53;&#x524D;&#x5BA2;&#x6237;&#x7AEF;&#x662F;&#x5426;&#x662F; iOS &#x7684;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5; <code>isIOS</code>&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x5728; <code>app/extends/context.js</code> &#x6587;&#x4EF6;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A; <code>isIOS</code> &#x65B9;&#x6CD5;&#x5373;&#x53EF;&#x3002;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code class="lang-js"><span class="hljs-comment">// app/extends/context.js</span>
+<span class="hljs-built_in">module</span>.exports = {
+   isIOS() {
+     <span class="hljs-keyword">const</span> iosReg = <span class="hljs-regexp">/iphone|ipad|ipod/i</span>;
+     <span class="hljs-keyword">return</span> iosReg.test(<span class="hljs-keyword">this</span>.get(<span class="hljs-string">&apos;user-agent&apos;</span>));
+   }
+};
+</code></pre>
+<p>&#x8003;&#x8651;&#x5230;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x5728;&#x4E00;&#x6B21; HTTP &#x8BF7;&#x6C42;&#x4E2D;&#x53EF;&#x80FD;&#x4F1A;&#x8C03;&#x7528;&#x591A;&#x6B21;&#xFF0C;&#x6211;&#x4EEC;&#x4E00;&#x822C;&#x4F1A;&#x8FD9;&#x4E48;&#x5199;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> IS_IOS = <span class="hljs-built_in">Symbol</span>(<span class="hljs-string">&apos;Context#isIOS&apos;</span>);
+
+<span class="hljs-built_in">module</span>.exports = {
+   isIOS() {
+     <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">this</span>[IS_IOS]) {
+       <span class="hljs-keyword">const</span> iosReg = <span class="hljs-regexp">/iphone|ipad|ipod/i</span>;
+       <span class="hljs-keyword">this</span>[IS_IOS] = iosReg.test(<span class="hljs-keyword">this</span>.get(<span class="hljs-string">&apos;user-agent&apos;</span>));
+     }
+     <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>[IS_IOS];
+   }
+};
+</code></pre>
+<p>&#x6216;&#x8005;</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> IS_IOS = <span class="hljs-built_in">Symbol</span>(<span class="hljs-string">&apos;Context#isIOS&apos;</span>);
+
+<span class="hljs-built_in">module</span>.exports = {
+   get isIOS() {
+     <span class="hljs-keyword">if</span> (!<span class="hljs-keyword">this</span>[IS_IOS]) {
+       <span class="hljs-keyword">const</span> iosReg = <span class="hljs-regexp">/iphone|ipad|ipod/i</span>;
+       <span class="hljs-keyword">this</span>[IS_IOS] = iosReg.test(<span class="hljs-keyword">this</span>.get(<span class="hljs-string">&apos;user-agent&apos;</span>));
+     }
+     <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>[IS_IOS];
+   }
+};
+</code></pre>
+
                                 
                                 </section>
                             
@@ -468,7 +510,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"内置对象","level":"1.4.8","depth":2,"next":{"title":"四、进阶","level":"1.5","depth":1,"ref":"","articles":[{"title":"运行时配置输出","level":"1.5.1","depth":2,"path":"zh-cn/进阶/运行时配置输出.md","ref":"./zh-cn/进阶/运行时配置输出.md","articles":[]}]},"previous":{"title":"插件","level":"1.4.7","depth":2,"path":"zh-cn/基础功能/插件.md","ref":"./zh-cn/基础功能/插件.md","articles":[]},"dir":"neutral"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"zh-cn/基础功能/内置对象.md","mtime":"2018-05-23T06:21:19.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-05-23T02:07:21.436Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"内置对象","level":"1.4.8","depth":2,"next":{"title":"四、进阶","level":"1.5","depth":1,"ref":"","articles":[{"title":"运行时配置输出","level":"1.5.1","depth":2,"path":"zh-cn/进阶/运行时配置输出.md","ref":"./zh-cn/进阶/运行时配置输出.md","articles":[]}]},"previous":{"title":"插件","level":"1.4.7","depth":2,"path":"zh-cn/基础功能/插件.md","ref":"./zh-cn/基础功能/插件.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"zh-cn/基础功能/内置对象.md","mtime":"2018-05-23T06:34:14.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2018-05-23T02:07:21.436Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

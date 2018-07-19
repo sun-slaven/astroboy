@@ -16,11 +16,17 @@ module.exports = [
 ];
 ```
 
-* 第一个参数：可选，路由名，默认为空，方便其他使用该路由。
+* 第一个参数：可选，路由名，默认为空，大部分情况不需要设置，方便其他使用该路由。
 * 第二个参数：必传，HTTP Verb，支持 GET / PUT / POST / DELETE / HEAD / OPTIONS / PATCH，不区分大小写，特殊值 ALL ，匹配所有请求
-* 第三个参数：必传，匹配路由，如果需要匹配多个路径，可传入一个数组
+* 第三个参数：必传，匹配路由，如果需要匹配多个路径，可传入一个数组，每个路由支持字符串、正则、通配符。
 * 第四个参数：必传，路由文件，规则：${目录名}.${目录名}.${文件名}（注意：目录名可能有多个）
-* 第五个参数：必传，执行的方法名
+* 第五个参数：必传，字符串或一个数组，分别代表执行的一个方法或一组方法。
+
+#### 关于 Router 的一些约定
+
+* 路由名命名规则：小写英文字母 + 下划线
+* JSON接口路由声明必须以 `.json` 结尾
+* 页面请求路由声明没有后缀
 
 #### 如何控制路由文件加载顺序
 
@@ -34,3 +40,25 @@ module.exports = [
 ```
 
 **注意**：一旦 `app/routers` 目录存在 `index.js` 文件，框架就只会加载改文件。
+
+#### 真实业务场景实例
+
+简单业务场景，例如 Restful JSON 接口：
+
+```js
+['GET', '/wscshop/showcase/shopnav/nav.json', 'showcase.ShopNavController', 'getShopNavJson'],
+```
+
+复杂业务场景，例如下面的店铺主页：
+
+```js
+['GET', '/wscshop/home/:alias', 'showcase.HomepageController', [
+  'checkVipDomain',
+  'initKdtId',
+  'initHomepageDetailData',
+  'initPlatform',
+  'initAcl',
+  'initBaseInfo',
+  'getIndexHtml'
+]]
+```

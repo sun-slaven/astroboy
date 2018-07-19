@@ -62,3 +62,7 @@ module.exports = [
   'getIndexHtml'
 ]]
 ```
+
+#### 如何查看完整的路由注册表
+
+应用启动后，框架会对 `app/routers` 目录下的所有文件做一个合并，并且把合并后的路由注册表输出到 `run/routers.json` 文件。
